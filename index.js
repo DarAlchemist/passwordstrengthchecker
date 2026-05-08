@@ -10,8 +10,20 @@ if (password.length >= 8) {
   console.log('Password too short')
 }
 
-// Check uppercase letters
-if () {
+// Check if password has uppercase letters
+
+let hasUppercase = false
+
+for (let i = 0; i < password.lenth; i++) {
+    let bit = password[i]
+
+    if (bit === bit.toUpperCase() && bit ==! bit.toLowerCase()) {
+        hasUppercase = true
+        break
+    }
+}
+
+if (hasUppercase) {
   console.log('Contains uppercase')
   score++
 } else {
