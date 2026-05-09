@@ -17,7 +17,7 @@ let hasUppercase = false;
 for (let i = 0; i < password.length; i++) {
   let bit = password[i];
 
-  if (bit === bit.toUpperCase() && bit == !bit.toLowerCase()) {
+  if (bit === bit.toUpperCase() && bit !== bit.toLowerCase()) {
     hasUppercase = true;
     break;
   }
@@ -37,7 +37,7 @@ let hasLowercase = false;
 for (let i = 0; i < password.length; i++) {
   let bit = password[i];
 
-  if (bit === bit.toLowerCase() && bit == !bit.toUpperCase()) {
+  if (bit === bit.toLowerCase() && bit !== bit.toUpperCase()) {
     hasLowercase = true;
     break;
   }
@@ -46,7 +46,7 @@ if (hasLowercase) {
   console.log("Contains lowercase");
   score++;
 } else {
-  console.log("No lowwercase letter");
+  console.log("No lowercase letter");
 }
 
 // Check numbers
@@ -76,7 +76,7 @@ let hasSpecialcharacters = false;
 for (let i = 0; i < password.length; i++) {
   let bit = password[i];
 
-  if (/^a-zA-Z0-9/.test(bit)) {
+  if (/[^a-zA-Z0-9]/.test(bit)) {
     hasSpecialcharacters = true;
     break;
   }
