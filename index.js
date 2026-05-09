@@ -1,88 +1,87 @@
-const password = 'Hello123!'
+const password = "Hello123!";
 
-let score = 0
+let score = 0;
 
 // Check password length
 if (password.length >= 8) {
-  console.log('Good length')
-  score++
+  console.log("Good length");
+  score++;
 } else {
-  console.log('Password too short')
+  console.log("Password too short");
 }
 
 // Check if password has uppercase letters
 
-let hasUppercase = false
+let hasUppercase = false;
 
 for (let i = 0; i < password.length; i++) {
-    let bit = password[i]
+  let bit = password[i];
 
-    if (bit === bit.toUpperCase() && bit ==! bit.toLowerCase()) {
-        hasUppercase = true
-        break
-    }
+  if (bit === bit.toUpperCase() && bit == !bit.toLowerCase()) {
+    hasUppercase = true;
+    break;
+  }
 }
 
 if (hasUppercase) {
-  console.log('Contains uppercase')
-  score++
+  console.log("Contains uppercase");
+  score++;
 } else {
-  console.log('No uppercase letter')
+  console.log("No uppercase letter");
 }
 
 // Check lowercase letters
 
-let hasLowercase = false
+let hasLowercase = false;
 
-for (let i=0; i < password.length; i++) {
-    let bit = password[i] 
-    
-    if (bit === bit.toLowerCase() && bit ==! bit.hasUppercase()) {
-        hasLowercase = true
-        break
-    }
+for (let i = 0; i < password.length; i++) {
+  let bit = password[i];
+
+  if (bit === bit.toLowerCase() && bit == !bit.toUpperCase()) {
+    hasLowercase = true;
+    break;
+  }
 }
- if(hasLowercase) {
-    console.log('Contains lowercase')
-    score++
+if (hasLowercase) {
+  console.log("Contains lowercase");
+  score++;
 } else {
-    console.log('no lowwercase letter')
+  console.log("no lowwercase letter");
 }
 
 // Check numbers
 
-let hasNumbers = false
+let hasNumbers = false;
 
-for (let i=0; i < password.length; i++) {
-    let bit = password[i]
+for (let i = 0; i < password.length; i++) {
+  let bit = password[i];
 
-    if (bit)
+  if (bit === "/[0-9]/") {
+    hasNumbers = true;
+    break;
+  }
 }
-    
 
-
-
-
-
-  console.log('Contains number')
-  score++
+if (hasNumbers) {
+  console.log("Contains number");
+  score++;
 } else {
-  console.log('No number found')
+  console.log("no numbers");
 }
 
-// Check special characters
-if () {
-  console.log('Contains special character')
-  score++
-} else {
-  console.log('No special character')
-}
+// // Check special characters
+// if () {
+//   console.log('Contains special character')
+//   score++
+// } else {
+//   console.log('No special character')
+// }
 
-// Final password strength
-if (score <= 2) {
-  console.log('Weak Password')
-} else if (score <= 4) {
-  console.log('Medium Password')
-} else {
-  console.log('Strong Password')
-}
+// // Final password strength
+// if (score <= 2) {
+//   console.log('Weak Password')
+// } else if (score <= 4) {
+//   console.log('Medium Password')
+// } else {
+//   console.log('Strong Password')
+// }
