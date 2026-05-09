@@ -46,7 +46,7 @@ if (hasLowercase) {
   console.log("Contains lowercase");
   score++;
 } else {
-  console.log("no lowwercase letter");
+  console.log("No lowwercase letter");
 }
 
 // Check numbers
@@ -56,7 +56,7 @@ let hasNumbers = false;
 for (let i = 0; i < password.length; i++) {
   let bit = password[i];
 
-  if (bit === "/[0-9]/") {
+  if (/[0-9]/.test(bit)) {
     hasNumbers = true;
     break;
   }
@@ -66,22 +66,35 @@ if (hasNumbers) {
   console.log("Contains number");
   score++;
 } else {
-  console.log("no numbers");
+  console.log("No numbers");
 }
 
-// // Check special characters
-// if () {
-//   console.log('Contains special character')
-//   score++
-// } else {
-//   console.log('No special character')
-// }
+// Check special characters
 
-// // Final password strength
-// if (score <= 2) {
-//   console.log('Weak Password')
-// } else if (score <= 4) {
-//   console.log('Medium Password')
-// } else {
-//   console.log('Strong Password')
-// }
+let hasSpecialcharacters = false;
+
+for (let i = 0; i < password.length; i++) {
+  let bit = password[i];
+
+  if (/^a-zA-Z0-9/.test(bit)) {
+    hasSpecialcharacters = true;
+    break;
+  }
+}
+
+if (hasSpecialcharacters) {
+  console.log("Contains special character");
+  score++;
+} else {
+  console.log("No special character");
+}
+
+// Final password strength
+
+if (score <= 2) {
+  console.log("Weak Password");
+} else if (score <= 4) {
+  console.log("Medium Password");
+} else {
+  console.log("Strong Password");
+}
